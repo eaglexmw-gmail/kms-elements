@@ -43,12 +43,12 @@ struct GF {
   ~GF();
 };
 
-BOOST_GLOBAL_FIXTURE (GF)
+BOOST_GLOBAL_FIXTURE (GF);
 
 GF::GF()
 {
   boost::property_tree::ptree ac, audioCodecs, vc, videoCodecs;
-  gst_init(nullptr, nullptr);
+  gst_init (nullptr, nullptr);
 
   moduleManager.loadModulesFromDirectories ("../../src/server:../../..");
 
@@ -99,7 +99,8 @@ releaseRtpEndpoint (std::shared_ptr<RtpEndpointImpl> &ep)
   MediaSet::getMediaSet ()->release (id);
 }
 
-static std::shared_ptr<MediaElementImpl> createTestSrc() {
+static std::shared_ptr<MediaElementImpl> createTestSrc()
+{
   std::shared_ptr <MediaElementImpl> src = std::dynamic_pointer_cast
       <MediaElementImpl> (MediaSet::getMediaSet()->ref (new  MediaElementImpl (
                             boost::property_tree::ptree(),
@@ -244,7 +245,7 @@ connection_state_changes_ipv6 ()
 }
 
 test_suite *
-init_unit_test_suite ( int , char *[] )
+init_unit_test_suite ( int, char *[] )
 {
   test_suite *test = BOOST_TEST_SUITE ( "WebRtcEndpoint" );
 

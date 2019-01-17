@@ -48,7 +48,7 @@ struct GF {
   ~GF();
 };
 
-BOOST_GLOBAL_FIXTURE (GF)
+BOOST_GLOBAL_FIXTURE (GF);
 
 GF::GF()
 {
@@ -704,7 +704,7 @@ check_data_channel ()
 }
 
 test_suite *
-init_unit_test_suite ( int , char *[] )
+init_unit_test_suite ( int, char *[] )
 {
   test_suite *test = BOOST_TEST_SUITE ( "WebRtcEndpoint" );
 

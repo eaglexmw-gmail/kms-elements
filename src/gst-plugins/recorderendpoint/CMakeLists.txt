@@ -19,16 +19,16 @@ add_library(recorderendpoint MODULE ${KMS_RECORDERENDPOINT_SOURCES} ${KMS_RECORD
 set_property (TARGET recorderendpoint
   PROPERTY INCLUDE_DIRECTORIES
     ${CMAKE_CURRENT_BINARY_DIR}/../../..
-    ${gstreamer-1.5_INCLUDE_DIRS}
+    ${gstreamer-1.0_INCLUDE_DIRS}
     ${KmsGstCommons_INCLUDE_DIRS}
 )
 
 target_link_libraries(recorderendpoint
   ${KmsGstCommons_LIBRARIES}
-  ${gstreamer-1.5_LIBRARIES}
-  ${gstreamer-base-1.5_LIBRARIES}
-  ${gstreamer-app-1.5_LIBRARIES}
-  ${gstreamer-pbutils-1.5_LIBRARIES}
+  ${gstreamer-1.0_LIBRARIES}
+  ${gstreamer-base-1.0_LIBRARIES}
+  ${gstreamer-app-1.0_LIBRARIES}
+  ${gstreamer-pbutils-1.0_LIBRARIES}
 )
 
 install(

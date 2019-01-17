@@ -46,12 +46,12 @@ struct GF {
   ~GF();
 };
 
-BOOST_GLOBAL_FIXTURE (GF)
+BOOST_GLOBAL_FIXTURE (GF);
 
 GF::GF()
 {
   boost::property_tree::ptree ac, audioCodecs, vc, videoCodecs;
-  gst_init(nullptr, nullptr);
+  gst_init (nullptr, nullptr);
 
   moduleManager.loadModulesFromDirectories ("../../src/server:../../..");
 
@@ -77,7 +77,7 @@ std::string exec (const std::string &str)
   std::string result = "";
 
   while (!feof (pipe.get() ) ) {
-    if (fgets(buffer, 128, pipe.get()) != nullptr) {
+    if (fgets (buffer, 128, pipe.get() ) != nullptr) {
       result += buffer;
     }
   }
@@ -113,7 +113,8 @@ releaseRecorderEndpoint (std::shared_ptr<RecorderEndpointImpl> &ep)
   MediaSet::getMediaSet ()->release (id);
 }
 
-static std::shared_ptr<MediaElementImpl> createTestSrc() {
+static std::shared_ptr<MediaElementImpl> createTestSrc()
+{
   std::shared_ptr <MediaElementImpl> src = std::dynamic_pointer_cast
       <MediaElementImpl> (MediaSet::getMediaSet()->ref (new  MediaElementImpl (
                             boost::property_tree::ptree(),
@@ -308,7 +309,7 @@ recorder_state_changes ()
 }
 
 test_suite *
-init_unit_test_suite ( int , char *[] )
+init_unit_test_suite ( int, char *[] )
 {
   test_suite *test = BOOST_TEST_SUITE ( "RecorderEndpoint" );
 

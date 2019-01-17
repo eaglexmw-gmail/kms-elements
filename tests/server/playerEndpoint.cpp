@@ -45,12 +45,12 @@ struct GF {
   ~GF();
 };
 
-BOOST_GLOBAL_FIXTURE (GF)
+BOOST_GLOBAL_FIXTURE (GF);
 
 GF::GF()
 {
   boost::property_tree::ptree ac, audioCodecs, vc, videoCodecs;
-  gst_init(nullptr, nullptr);
+  gst_init (nullptr, nullptr);
 
   moduleManager.loadModulesFromDirectories ("../../src/server:../../..");
 
@@ -89,7 +89,8 @@ releasePlayerEndpoint (std::shared_ptr<PlayerEndpointImpl> &ep)
   MediaSet::getMediaSet ()->release (id);
 }
 
-static std::shared_ptr<MediaElementImpl> createTestSink() {
+static std::shared_ptr<MediaElementImpl> createTestSink()
+{
   std::shared_ptr <MediaElementImpl> src = std::dynamic_pointer_cast
       <MediaElementImpl> (MediaSet::getMediaSet()->ref (new  MediaElementImpl (
                             boost::property_tree::ptree(),
@@ -203,7 +204,7 @@ eos_received_with_no_accept_eos_sink ()
 }
 
 test_suite *
-init_unit_test_suite ( int , char *[] )
+init_unit_test_suite ( int, char *[] )
 {
   test_suite *test = BOOST_TEST_SUITE ( "PlayerEndpoint" );
 
