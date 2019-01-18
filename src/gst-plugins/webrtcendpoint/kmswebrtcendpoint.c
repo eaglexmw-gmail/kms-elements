@@ -274,8 +274,7 @@ new_selected_pair_full (KmsWebrtcSession * sess,
       "New candidate pair selected, local: '%s', remote: '%s'"
       ", stream_id: '%s', component_id: %d",
       kms_ice_candidate_get_candidate (lcandidate),
-      kms_ice_candidate_get_candidate (rcandidate),
-      stream_id, component_id);
+      kms_ice_candidate_get_candidate (rcandidate), stream_id, component_id);
 
   g_signal_emit (G_OBJECT (self),
       kms_webrtc_endpoint_signals[SIGNAL_NEW_SELECTED_PAIR_FULL], 0,
@@ -861,7 +860,7 @@ kms_webrtc_endpoint_plugin_init (GstPlugin * plugin)
 
 GST_PLUGIN_DEFINE (GST_VERSION_MAJOR,
     GST_VERSION_MINOR,
-    kmswebrtcendpoint,
+    webrtcendpoint,
     "Kurento webrtc endpoint",
     kms_webrtc_endpoint_plugin_init, VERSION, GST_LICENSE_UNKNOWN,
     "Kurento Elements", "http://kurento.com/")

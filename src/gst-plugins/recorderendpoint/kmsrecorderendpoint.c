@@ -18,7 +18,7 @@
 #include "config.h"
 #endif
 
-#define _GNU_SOURCE // Enable GNU Extensions: 'ALLPERMS' is not POSIX
+#define _GNU_SOURCE             // Enable GNU Extensions: 'ALLPERMS' is not POSIX
 #include <sys/stat.h>
 
 #include <string.h>
@@ -1977,8 +1977,8 @@ bus_sync_signal_handler (GstBus * bus, GstMessage * msg, gpointer data)
     gst_task_pool_push (self->priv->pool, kms_recorder_endpoint_on_eos_message,
         self, NULL);
   } else if ((GST_MESSAGE_TYPE (msg) == GST_MESSAGE_STATE_CHANGED)
-      && (GST_OBJECT_CAST (KMS_BASE_MEDIA_MUXER_GET_PIPELINE (self->
-                  priv->mux)) == GST_MESSAGE_SRC (msg))) {
+      && (GST_OBJECT_CAST (KMS_BASE_MEDIA_MUXER_GET_PIPELINE (self->priv->
+                  mux)) == GST_MESSAGE_SRC (msg))) {
     GstState new_state, pending;
 
     gst_message_parse_state_changed (msg, NULL, &new_state, &pending);
@@ -2049,7 +2049,7 @@ kms_recorder_endpoint_plugin_init (GstPlugin * plugin)
 
 GST_PLUGIN_DEFINE (GST_VERSION_MAJOR,
     GST_VERSION_MINOR,
-    kmsrecorderendpoint,
+    recorderendpoint,
     "Kurento recorder endpoint",
     kms_recorder_endpoint_plugin_init, VERSION, GST_LICENSE_UNKNOWN,
     "Kurento Elements", "http://kurento.com/")

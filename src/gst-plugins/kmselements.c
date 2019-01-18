@@ -65,7 +65,7 @@ kurento_init (GstPlugin * kurento)
 
 GST_PLUGIN_DEFINE (GST_VERSION_MAJOR,
     GST_VERSION_MINOR,
-    kmselements,
+    kmselementsplugins,
     "Kurento elements",
     kurento_init, VERSION, GST_LICENSE_UNKNOWN, "Kurento Elements",
     "http://kurento.com/")
